@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — JS Health Initiative East Africa</title>
+<meta name="description" content="A Ugandan non-profit supporting communities through digital skilling, public health education, research and surgical care support.">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="extra.css"></head>
+<body><div id="nav"></div>
+<section class="section"><div class="container"><h2>Donate</h2>
+<p class="section-lead">Your gift funds digital skilling, public health education and surgical care support. Pay with Visa, Mastercard or mobile money. Card details are entered on our payment partner's secure page and never reach this website.</p>
+<div id="banner"></div>
+<form id="donate" class="stacked-form" data-type="donate" novalidate>
+<div class="amounts"><button type="button" class="btn btn-ghost" data-a="10">10</button><button type="button" class="btn btn-ghost" data-a="25">25</button><button type="button" class="btn btn-ghost" data-a="50">50</button><button type="button" class="btn btn-ghost" data-a="100">100</button></div>
+<label>Amount<input name="amount" type="number" min="1" step="any" required></label>
+<label>Currency<select name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>UGX</option></select></label>
+<label>Your name<input name="name" maxlength="100" required></label><label>Email (for your receipt)<input name="email" type="email" required></label>
+<button class="btn btn-large">Donate securely</button><p class="form-status" role="status"></p></form></div></section>
+<div id="foot"></div><script src="config.js"></script><script src="app.js"></script></body></html>
