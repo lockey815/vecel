@@ -1,5 +1,34 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>Admin</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="extra.css"></head>
-<body><main class="container admin"><h1>Admin</h1>
-<form id="login" class="stacked-form" hidden><label>Email<input name="email" type="email" required></label><label>Password<input name="password" type="password" required></label><button class="btn">Sign in</button><p class="form-status" id="ls"></p></form>
-<div id="panel" hidden><div class="tabs" id="tabs"></div><div id="view"></div><p><button class="btn btn-ghost" id="out">Sign out</button></p></div></main>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script><script src="config.js"></script><script src="app.js"></script><script src="admin.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Our Pillars | JS Health Initiative</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <div id="nav"></div>
+  <main class="container section">
+    <h1>Our Pillars</h1>
+    <p>Choose a pillar to view its latest activities and announcements.</p>
+    <div class="features" id="pillar-list"></div>
+  </main>
+  <div id="foot"></div>
+  <script>
+    // Keep these slugs and names in sync with PILLARS in admin.js and pillar.html.
+    const PILLARS = [
+      { slug: "pillar-1", name: "Pillar 1", description: "Updates and activities for Pillar 1." },
+      { slug: "pillar-2", name: "Pillar 2", description: "Updates and activities for Pillar 2." },
+      { slug: "pillar-3", name: "Pillar 3", description: "Updates and activities for Pillar 3." },
+      { slug: "pillar-4", name: "Pillar 4", description: "Updates and activities for Pillar 4." }
+    ];
+    document.getElementById("pillar-list").innerHTML = PILLARS.map(p =>
+      `<article class="feature"><h2>${p.name}</h2><p>${p.description}</p><a class="btn" href="pillar.html?pillar=${encodeURIComponent(p.slug)}">View pillar</a></article>`
+    ).join("");
+  </script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
